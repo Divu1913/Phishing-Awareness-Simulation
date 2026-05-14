@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>College Portal Login</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background: linear-gradient(135deg,#081b29,#0f2d45,#000000);
+      overflow:hidden;
+    }
+
+    .background{
+      position:absolute;
+      width:100%;
+      height:100%;
+      background-image:
+      radial-gradient(circle at 20% 20%, rgba(0,255,255,0.1), transparent 25%),
+      radial-gradient(circle at 80% 80%, rgba(0,140,255,0.1), transparent 25%);
+      animation: moveBg 8s infinite alternate;
+    }
+
+    @keyframes moveBg{
+      from{
+        transform:scale(1);
+      }
+      to{
+        transform:scale(1.1);
+      }
+    }
+
+    .container{
+      position:relative;
+      width:360px;
+      padding:40px;
+      border-radius:20px;
+      background:rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border:1px solid rgba(255,255,255,0.1);
+      box-shadow:0 0 25px rgba(0,0,0,0.5);
+      color:white;
+      z-index:1;
+    }
+
+    .logo{
+      text-align:center;
+      margin-bottom:20px;
+    }
+
+    .logo h1{
+      font-size:28px;
+      color:#00c3ff;
+      letter-spacing:1px;
+    }
+
+    .logo p{
+      color:#ccc;
+      font-size:14px;
+      margin-top:5px;
+    }
+
+    .input-box{
+      margin:20px 0;
+    }
+
+    .input-box label{
+      display:block;
+      margin-bottom:8px;
+      font-size:14px;
+    }
+
+    .input-box input{
+      width:100%;
+      padding:12px;
+      border:none;
+      outline:none;
+      border-radius:10px;
+      background:rgba(255,255,255,0.1);
+      color:white;
+      font-size:15px;
+    }
+
+    .input-box input::placeholder{
+      color:#bbb;
+    }
+
+    .login-btn{
+      width:100%;
+      padding:12px;
+      border:none;
+      border-radius:10px;
+      background:#00c3ff;
+      color:white;
+      font-size:16px;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .login-btn:hover{
+      background:#008cff;
+      transform:scale(1.02);
+    }
+
+    .forgot{
+      text-align:right;
+      margin-top:10px;
+      font-size:13px;
+    }
+
+    .forgot a{
+      color:#00c3ff;
+      text-decoration:none;
+    }
+
+    .warning{
+      margin-top:25px;
+      font-size:12px;
+      color:#ffb3b3;
+      text-align:center;
+      line-height:18px;
+    }
+
+    .success-message{
+      display:none;
+      margin-top:20px;
+      padding:15px;
+      border-radius:10px;
+      background:rgba(0,255,100,0.15);
+      border:1px solid rgba(0,255,100,0.4);
+      text-align:center;
+      color:#aaffcc;
+      font-size:14px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+
+  <div class="logo">
+    <h1>College Portal</h1>
+    <p>Student Authentication System</p>
+  </div>
+
+  <form id="loginForm">
+
+    <div class="input-box">
+      <label>Email ID</label>
+      <input type="email" placeholder="Enter your email" required>
+    </div>
+
+    <div class="input-box">
+      <label>Password</label>
+      <input type="password" placeholder="Enter your password" required>
+    </div>
+
+    <button type="submit" class="login-btn">
+      Login
+    </button>
+
+    <div class="forgot">
+      <a href="#">Forgot Password?</a>
+    </div>
+
+  </form>
+
+  <div class="success-message" id="successMessage">
+    ⚠️ This was a phishing awareness simulation.<br><br>
+    Never enter your credentials without verifying:
+    <br><br>
+    ✔ Website URL  
+    <br>
+    ✔ Sender authenticity  
+    <br>
+    ✔ HTTPS security  
+  </div>
+
+  <div class="warning">
+    Educational Cybersecurity Simulation Project<br>
+    For Awareness Purposes Only
+  </div>
+
+</div>
+
+<script>
+
+document.getElementById("loginForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    document.getElementById("loginForm").style.display = "none";
+
+    document.getElementById("successMessage").style.display = "block";
+
+});
+
+</script>
+
+</body>
+</html>
